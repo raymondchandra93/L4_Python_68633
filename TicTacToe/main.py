@@ -29,6 +29,19 @@ def get_user_input(board, player):
         row = int(input("Please enter a CORRECT row number(0-2): "))
 
     # Getting input for the column number
+    col = int(input("Please enter column number: "))
+    while(col < 0 or col > 2):
+        col = int(input("Please enter a CORRECT column number(0-2): "))
+
+    index = row * 3 + col
+    if(board[index] != " "):
+        print("The space has been taken!")
+        get_user_input(board, player)
+    else:
+        if(player == 1):
+            board[index] = "x"
+        else:
+            board[index] = "o"
 
 """ main """
 
