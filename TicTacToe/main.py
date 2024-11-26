@@ -43,11 +43,51 @@ def get_user_input(board, player):
         else:
             board[index] = "o"
 
-""" main """
+""" Phase 4 """
+
+def check_three(board, i1, i2, i3):
+    if board[i1] != " " and board[i1] == board[i2] and board[i1] == board[i3]:
+        return True
+    else:
+        return False
+
+def check_win(board, player):
+    if (check_three(board, 0, 1, 2) or check_three(board, 3, 4, 5) or check_three(board, 6, 7, 8) or 
+        check_three(board, 0, 3, 6) or check_three(board, 1, 4, 7) or check_three(board, 2, 5, 8) or
+        check_three(board, 0, 4, 8) or check_three(board, 6, 4, 2)):
+        
+        print_board(board)
+        print(f"Player {player} wins!!")
+
+        return False
+    else:
+        return True
+
+""" Phase  """
 
 def main():
     board = make_board()
-    print_board(board)
+    player = 1
+    count = 0
+    play_game = True
+
+    while play_game:
+        print_board(board)
+        get_user_input(board, player)
+        play_game = check_win(board, player)
+        count += 1
+
+        # checking tie condition
+        if count > 8:
+            play_game = False
+            print("Tie Game")
+        
+        # change the player
+        if player == 1: 
+            player = 2
+        else: 
+            player = 1
+
 
 if __name__ == "__main__":
     main()
