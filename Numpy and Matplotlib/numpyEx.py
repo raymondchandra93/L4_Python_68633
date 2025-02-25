@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 # -- Numpy Array
 mylist = [1, 2, 3, 4, 5]
@@ -13,8 +14,8 @@ myarray = np.array(mylist)
 # -- Numpy Reshape
 myarray = np.array([1, 2, 3, 4, 5, 6]) 
 
-reshaped_arr = myarray.reshape(3, 2)        # reshaping the array into 2 rows & 3 columns
-#print(reshaped_arr)
+reshaped_arr = myarray.reshape(2, 3)        # reshaping the array into 2 rows & 3 columns
+# print(reshaped_arr)
 
 # -- Numpy Arrange
 arranged_arr = np.arange(3)                 # [0, 1, 2] - return element start 0, stop before 3, step 1
@@ -38,8 +39,8 @@ linspace_arr = np.linspace(0, 11, 5)        # generate 5 evenly spaced numbers f
 # -- Numpy Statistical Functions
 stat_arr = np.array([10, 20, 30, 40, 50])
 
-# print(np.median(stat_arr))
-# print(np.mean(stat_arr))
+#print(np.median(stat_arr))
+#print(np.mean(stat_arr))
 #print(np.std(stat_arr))
 #print(np.min(stat_arr))
 #print(np.max(stat_arr))
@@ -47,6 +48,28 @@ stat_arr = np.array([10, 20, 30, 40, 50])
 # -- Numpy Indexing and Slicing
 id_arr = np.array([10, 20, 30, 40, 50])
 
-print(id_arr[0])
-print(id_arr[-1])
-print(id_arr[1:4])
+#print(id_arr[0])
+#print(id_arr[-1])
+#print(id_arr[1:4])
+
+# -- Boolean Masking & Filtering
+bmf_arr = np.array([1, 2, 3, 4, 5])
+
+#print(bmf_arr[bmf_arr>3])      # filtering
+#print(bmf_arr[bmf_arr%2==0])    
+
+#print(bmf_arr%2==0)          # boolean masking
+#print(bmf_arr>3)
+
+# -- Matrix Operation
+mx_a = np.array([[1,2], [3,4]]) 
+mx_b = np.array([[5,6], [7,8]]) 
+
+# print(np.dot(mx_a, mx_b))
+
+# -- Random Number Generation
+ran_arr = np.random.rand(3,3)
+print(ran_arr)
+
+ran_arr2 = np.random.randint(1, 10, 3)
+print(ran_arr2)
