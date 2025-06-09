@@ -39,7 +39,7 @@ linspace_arr = np.linspace(0, 11, 5)        # generate 5 evenly spaced numbers f
 # -- Numpy Statistical Functions
 stat_arr = np.array([10, 20, 30, 40, 50])
 
-#print(np.median(stat_arr))
+#print(np.median(stat_arr)) 
 #print(np.mean(stat_arr))
 #print(np.std(stat_arr))
 #print(np.min(stat_arr))
@@ -70,6 +70,6 @@ mx_b = np.array([[5,6], [7,8]])
 # -- Random Number Generation
 ran_arr = np.random.rand(3,3)
 print(ran_arr)
-
+ 
 ran_arr2 = np.random.randint(1, 10, 3)
 print(ran_arr2)
